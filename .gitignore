@@ -1,9 +1,50 @@
-Pasca-UTS/Pertemuan 1/Praktikum 1 - Pasca UTS_obed/
-Pasca-UTS/Pertemuan 1/Praktikum 1 - Pasca UTS_wahyu/
-Pra-UTS/Pertemuan 1 - HTML & CSS/Tugas_sebelah.jpg
-*.xlsx
-Format penulisan laprak.txt
-IMG20190912101007.jpg
-IMG20190919102358.jpg
-IMG20190919114442.jpg
-Link Kumpul Tugas Praktikum.txt
+# Dependencies
+node_modules/
+vendor/
+
+# Runtime cache
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Framework cache
+.next/
+.nuxt/
+.output/
+.cache/
+.parcel-cache/
+.turbo/
+bootstrap/cache/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+
+# Package manager cache
+.yarn/
+.pnp.*
+.npm/
+
+# IDE / Editor (exclude sftp.json)
+/.idea/
+/.vscode/*
+!/.vscode/sftp.json
+*.sublime-workspace
+*.sublime-project
+/nbproject/
+.vs/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Binaries / compiled
+*.o
+*.a
+*.so
+*.dylib
+*.wasm
+*.class
