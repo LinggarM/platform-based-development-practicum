@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE daftar-buku [
+<!ELEMENT daftar-buku (buku+) >
+<!ELEMENT buku (judul,pengarang) >
+<!ELEMENT judul (#PCDATA) >
+<!ELEMENT pengarang (#PCDATA) >
+]>
+
+<daftar-buku>
+	<buku>
+		<judul>XML untuk Pemula</judul>
+		<pengarang>Ozalif Routing</pengarang>
+	</buku>
+	<buku>
+		<judul>Belajar XML dalam Sekejap Mata</judul>
+		<pengarang>Stefanus Sendana</pengarang>
+	</buku>
+	<buku>
+		<judul>Mahir XML dan XSLT dalam 60 menit</judul>
+		<pengarang>Eko Widiyanto</pengarang>
+	</buku>
+</daftar-buku>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table</title>
+</head>
+<body>
+    <h2>Tabel dengan rowgroup dan column group</h2>
+    <table border="1" style="width:100%">
+        <caption>Jadwal Kuliah</caption>
+
+        <col span="1" class="matkul">
+        <colgroup id="jadwal">
+            <col span="1" class="hari">
+            <col span="1" class="jam">
+        </colgroup>
+        
+        <thead>
+            <tr>
+                <th>Mata Kuliah</th>
+                <th colspan="2">Jadwal</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Algoritma dan Pemrograman</td>
+                <td>Senin</td>
+                <td>08.00 - 10.00</td>
+            </tr>
+            <tr>
+                <td>Struktur Data</td>
+                <td>Senin</td>
+                <td>10.00-12.00</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

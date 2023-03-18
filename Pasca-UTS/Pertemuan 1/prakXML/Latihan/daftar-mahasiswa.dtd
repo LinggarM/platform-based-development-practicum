@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT daftar-mahasiswa (mahasiswa+) >
+<!ELEMENT mahasiswa (nim,nama,provinsi) >
+<!ELEMENT nim (#PCDATA) >
+<!ELEMENT nama (#PCDATA) >
+<!ELEMENT provinsi (#PCDATA) >

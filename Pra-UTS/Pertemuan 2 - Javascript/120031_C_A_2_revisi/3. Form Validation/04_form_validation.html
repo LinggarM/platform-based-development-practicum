@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Validasi Form dengan JavaScript</title>
+        <script>
+        var a = Math.ceil(Math.random() * 9);
+        var b = Math.ceil(Math.random() * 9);
+
+        function validateForm() {
+            var RegExpression = /^[a-zA-Z\s]*$/;
+            var Length = {min:3,max:50};
+            if (document.forms["formRegistration"]["name"].value == "") {
+                alert("Please fill your name.");
+                document.forms["formRegistration"]["name"].focus();
+                return false; 
+            } else if (!RegExpression.test(document.forms["formRegistration"]["name"].value)) {
+                alert("Name can only contain letters and spaces");
+                document.forms["formRegistration"]["name"].focus();
+                return false;
+            } else if (document.forms["formRegistration"]["name"].value.length < Length.min || document.forms["formRegistration"]["name"].value.length > Length.max) {
+                alert("Min character is 3, max character is 50");
+                document.forms["formRegistration"]["name"].focus();
+                return false;
+            }
+
+            if (document.forms["formRegistration"]["gender"].value == "") {
+                alert("Please select your gender.");
+                return false; 
+            }
+
+            if (document.forms["formRegistration"]["height"].value == "") {
+                alert("Please fill your height.");
+                document.forms["formRegistration"]["height"].focus();
+                return false;
+            } else if (isNaN(document.forms["formRegistration"]["height"].value)){
+                alert("Height must be numeric");
+                document.forms["formRegistration"]["height"].value = "";
+                document.forms["formRegistration"]["height"].focus();
+                return false; 
+            }
+
+            var RegExpressionaddress = /^[A-Za-z0-9.,:-_]*$/;
+            var Lengthaddress = {min:3,max:100};
+            if (document.forms["formRegistration"]["address"].value == "") {
+                alert("Please fill your address.");
+                document.forms["formRegistration"]["address"].focus();
+                return false; 
+            } else if (!RegExpressionaddress.test(document.forms["formRegistration"]["address"].value)) {
+                alert("Address can only contain alphabet, numeric, and punctuation (. , : - _).");
+                document.forms["formRegistration"]["address"].focus();
+                return false;
+            } else if (document.forms["formRegistration"]["address"].value.length < Lengthaddress.min || document.forms["formRegistration"]["address"].value.length > Lengthaddress.max) {
+                alert("Min character is 3, max character is 100");
+                document.forms["formRegistration"]["address"].focus();
+                return false;
+            }
+
+            if (document.forms["formRegistration"]["city"].value == ""){
+                alert("Please select your city.");
+                document.forms["formRegistration"]["city"].focus();
+                return false;
+            }
+
+            var emailValidate = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (document.forms["formRegistration"]["email"].value == ""){
+                alert("Please fill your email.");
+                document.forms["formRegistration"]["email"].focus();
+                return false;
+            } else if (!emailValidate.test(document.forms["formRegistration"]["email"].value)) {
+                alert("Please enter a valid email address");
+                document.forms["formRegistration"]["email"].focus();
+                return false;
+            }
+
+            var hobby = document.forms["formRegistration"]["hobby[]"];
+            if (hobby[0].checked == false && hobby[1].checked == false && hobby[2].checked == false && hobby[3].checked == false) {
+                alert("Please select at least one hobby.");
+                return false
+            }
+
+            if (document.forms["formRegistration"]["captcha_input"].value != (a+b)) {
+                alert("Please type Captcha correctly.");
+            }
+            return true;
+        }
+
+        function get_city() {
+            var province = document.forms["formRegistration"]["province"].value;
+            if (province == "West Java"){
+                document.getElementById("city").innerHTML =
+                '<option value="Bandung">Bandung</option>' + 
+                '<option value="Kuningan">Kuningan</option>' + 
+                '<option value="Indramayu">Indramayu</option>'
+            }
+            if (province == "Central Java"){
+                document.getElementById("city").innerHTML =
+                '<option value="Semarang">Semarang</option>' + 
+                '<option value="Ungaran">Ungaran</option>' + 
+                '<option value="Solo">Solo</option>'
+            }
+            if (province == "East Java"){
+                document.getElementById("city").innerHTML =
+                '<option value="Surabaya">Surabaya</option>' + 
+                '<option value="Sidoarjo">Sidoarjo</option>' + 
+                '<option value="Malang">Malang</option>'
+            }
+        }
+
+        //Generates the captcha function
+        function generateCaptcha() {
+            var code = a + ' + ' + b;
+            document.forms["formRegistration"]["captcha_text"].value = code;  
+        }
+
+        function removeSpaces(string) {
+            return string.split(' ').join('');
+        }
+        </script>
+        </head>
+
+        <body onload="generateCaptcha()">
+            <h2>User Input</h2>
+            <form id="formRegistration" method="GET" autocomplete="on" action="" onsubmit="return validateForm()">
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td><input type="text" name="name" size="30"/></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>:</td>
+                        <td>
+                            <input type="radio" name="gender" value="male">Male<br/>
+                            <input type="radio" name="gender" value="female">Female                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>:</td>
+                        <td><input type="text" name="height"></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>:</td>
+                        <td><textarea name="address" rows="5" cols="30"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Province</td>
+                        <td>:</td>
+                        <td>
+                            <select name="province" onchange="get_city()">
+                                <option value="">--Select a province--</option>
+                                <option value="West Java">West Java</option>
+                                <option value="Central Java">Central Java</option>
+                                <option value="East Java">East Java</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>:</td>
+                        <td>
+                            <select name="city" id="city">
+                                <option value="">--Select a province--</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><input type="email" name="email" size="30"></td>
+                    </tr>
+                    <tr>
+                        <td>Hobby</td>
+                        <td>:</td>
+                        <td>
+                            <input type="checkbox" name="hobby[]" value="travelling">Travelling<br/>
+                            <input type="checkbox" name="hobby[]" value="reading">Reading<br/>
+                            <input type="checkbox" name="hobby[]" value="swimming">Swimming<br/>
+                            <input type="checkbox" name="hobby[]" value="painting">Painting<br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Captcha</td>
+                        <td>:</td>
+                        <td>
+                            <input type="text" name="captcha_text" size="10" disabled>
+                            <input type="text" name="captcha_input" size="10">
+                        </td>
+                    </tr>
+                    <script>
+                    
+                    </script>
+                    <tr>
+                        <td colspan="3"><br><input type="submit" name="submit" value="Submit">&nbsp;
+                        <input type="reset" name="reset" value="Reset"></td>
+                    </tr>
+                </table>
+            </form> 
+        </body>
+</html>

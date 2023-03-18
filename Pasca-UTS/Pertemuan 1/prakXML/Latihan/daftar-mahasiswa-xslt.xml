@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="daftar-mahasiswa.xsl"?>
+<daftar-mahasiswa>
+	<mahasiswa>
+		<nim>1234</nim>
+		<nama>Imam Bonjol</nama>
+		<provinsi>D.I. Aceh</provinsi>
+	</mahasiswa>
+	<mahasiswa>
+		<nim>5678</nim>
+		<nama>Thomas Matulessi</nama>
+		<provinsi>Maluku</provinsi>
+	</mahasiswa>
+</daftar-mahasiswa>

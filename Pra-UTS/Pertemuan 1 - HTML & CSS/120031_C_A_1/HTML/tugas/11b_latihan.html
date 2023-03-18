@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML Form</title>
+</head>
+<body>
+    <h2>User Input</h2>
+    <form method="POST" autocomplete="on" action="">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td><input type="text" pattern="[a-zA-Z]{3-50} name="name" size="30" minlength="3" maxlength="50" placeholder="Name (max 50 characters)"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>:</td>
+                <td><textarea name="addre ss" rows="5" cols="30" placeholder="Address (max 100 characters)"></textarea></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>:</td>
+                <td>
+                    <input type="radio" name="gender" value="male">Male <br />
+                    <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>:</td>
+                <td>
+					<input type="text" id="city" name="city" list="citylist">  
+					<datalist id="citylist">  
+					<option value="Airport West">  
+					<option value="Box Hill">  
+					<option value="Yarraville">   
+					</datalist>  
+                </td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>:</td>
+                <td>
+                    <input type="checkbox" name="hobby[]"
+                    value="travelling">Travelling<br />
+                    <input type="checkbox" name="hobby[]"
+                    value="reading">Reading<br />
+                    <input type="checkbox" name="hobby[]"
+                    value="swimming">Swimming<br />
+                    <input type="checkbox" name="hobby[]"
+                    value="painting">Painting<br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"><br>
+                    <input type="submit" name="submit" value="Submit">&nbsp;
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

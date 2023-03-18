@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Links</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        header, footer {
+            background-color: blue;
+            color: white;
+            padding: 15px;
+        }
+        .column {
+            float: left;
+            padding: 15px;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .nav {
+            width: 25%;
+        }
+        .content {
+            width: 75%;
+        }
+        .nav ul {
+            list-style-type: none;
+            font-weight: bold;
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav ul li {
+            background: #cce5ff;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Belajar HTML</h1>
+    </header>
+
+    <div class="clearfix">
+        <div class="column nav">
+            <ul>
+                <li><a href="#heading">Heading</a></li>
+                <li><a href="#hr">Horizontal Rule</a></li>
+                <li><a href="#paragraf">Paragraf</a></li>
+                <li><a href="#br">Break Line</a></li>
+            </ul>
+        </div>
+        <div class="column content">
+                <h2 id="heading">HTML heading</h2>
+                <p>HTML heading digunakan untuk mendeskripsikan heading (judul). HTML heading
+                ditampilkan dengan ukuran huruf yang lebih besar dibanding teks biasa., dimulai
+                dari h1 untuk ukuran huruf terbesar sampai dengan h6 untuk ukuran huruf heading
+                terkecil.</p>
+            
+                <h2 id="hr">HTML horizontal rule</h2>
+                <p>Elemen ini digunakan untuk memberikan garis horizontal lurus pada halaman
+                web, didefinisikan dengan tag hr.</p>
+            
+                <h2 id="paragraf">HTML paragraf</h2>
+                <p>Elemen ini digunakan untuk mendeskripsikan sebuah paragraf, didefinisikan
+                dengan pasangan tag p.</p>
+                
+                <h2 id="br">HTML line break</h2>
+                <p>Elemen ini digunakan untuk membuat baris baru (line break), didefinisikan
+                dengan tag br. Dalam dokumen HTML spasi lebih maupun baris kosong akan dianggap
+                sebagai spasi tunggal, sehingga untuk me mberikan line break dapat digunakan
+                elemen break line.</p>
+        </div>
+    </div>
+    <footer>
+        <p>Pengembangan Berbasis Platform - Semester Gasal 2017/2018</p>
+    </footer>
+</body>
+</html>
