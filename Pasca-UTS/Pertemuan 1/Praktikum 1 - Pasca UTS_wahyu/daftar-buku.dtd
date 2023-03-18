@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-	<!ELEMENT daftar-buku (buku+)>
-	<!ELEMENT buku (judul, pengarang)>
-	<!ELEMENT judul (#PCDATA)>
-	<!ELEMENT pengarang (#PCDATA)>
